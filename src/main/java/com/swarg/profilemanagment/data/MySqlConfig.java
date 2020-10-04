@@ -37,7 +37,7 @@ public class MySqlConfig {
 		HashMap<String, Object> properties = new HashMap<>();
 		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 		//properties.put("hibernate.ddl-auto", "valid");
-		return builder.dataSource(dataSource).packages("com.swarg.profilemanagment.data.model").properties(properties).persistenceUnit("profilemanagment").build();
+		return builder.dataSource(dataSource).packages("com.swarg.profilemanagment.data.domain").properties(properties).persistenceUnit("profilemanagment").build();
 	}
 
 	@Bean(name = "transactionManager")

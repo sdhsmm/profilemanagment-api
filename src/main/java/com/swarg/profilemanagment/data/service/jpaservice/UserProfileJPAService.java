@@ -3,10 +3,12 @@ package com.swarg.profilemanagment.data.service.jpaservice;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.swarg.profilemanagment.data.model.UserProfile;
+import com.swarg.profilemanagment.data.domain.UserProfile;
 import com.swarg.profilemanagment.data.repo.UserProfileRepository;
 import com.swarg.profilemanagment.data.service.UserProfileService;
 
@@ -46,6 +48,24 @@ public class UserProfileJPAService implements UserProfileService {
 	public UserProfile findUserProfileById(Long id) {
 		UserProfile user = userProfileRepository.findById(id).orElse(null);
 		return user;
+	}
+
+	@Override
+	public UserProfile save(UserProfile userprofile) {
+		UserProfile user = userProfileRepository.save(userprofile);
+		return user;
+	}
+
+	@Override
+	public UserProfile update(UserProfile userprofile) {
+		UserProfile user = userProfileRepository.save(userprofile);
+		return user;
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		userProfileRepository.deleteById(id);
 	}
 
 }

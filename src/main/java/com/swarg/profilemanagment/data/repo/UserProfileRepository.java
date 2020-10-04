@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.swarg.profilemanagment.data.model.UserProfile;
+import com.swarg.profilemanagment.data.domain.UserProfile;
 
 public interface UserProfileRepository extends JpaRepository<UserProfile, Long> {
 

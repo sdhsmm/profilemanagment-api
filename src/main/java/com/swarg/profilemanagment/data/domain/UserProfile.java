@@ -1,11 +1,10 @@
-package com.swarg.profilemanagment.data.model;
-
-import java.sql.Date;
+package com.swarg.profilemanagment.data.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class UserProfile {
@@ -17,11 +16,9 @@ public class UserProfile {
 	String email;
 	String phoneNo;
 	String address;
-	String password;
-	Date registrationDate;
-	boolean enabled;
-	boolean verified;
-	boolean locked;
+
+	@OneToOne(optional = true)
+	UserAccount userAccount;
 
 	public Long getId() {
 		return id;
@@ -63,44 +60,17 @@ public class UserProfile {
 		this.address = address;
 	}
 
-	public String getPassword() {
-		return password;
+	public UserAccount getUserAccount() {
+		return userAccount;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUserAccount(UserAccount userAccount) {
+		this.userAccount = userAccount;
 	}
 
-	public Date getRegistrationDate() {
-		return registrationDate;
-	}
-
-	public void setRegistrationDate(Date registrationDate) {
-		this.registrationDate = registrationDate;
-	}
-
-	public boolean isEnabled() {
-		return enabled;
-	}
-
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
-	}
-
-	public boolean isVerified() {
-		return verified;
-	}
-
-	public void setVerified(boolean verified) {
-		this.verified = verified;
-	}
-
-	public boolean isLocked() {
-		return locked;
-	}
-
-	public void setLocked(boolean locked) {
-		this.locked = locked;
+	@Override
+	public String toString() {
+		return "UserProfile [id=" + id + ", name=" + name + ", email=" + email + ", phoneNo=" + phoneNo + ", address=" + address + "]";
 	}
 
 }

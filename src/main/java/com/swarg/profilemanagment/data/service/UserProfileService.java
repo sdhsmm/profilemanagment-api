@@ -2,9 +2,7 @@ package com.swarg.profilemanagment.data.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
-import com.swarg.profilemanagment.data.model.UserProfile;
+import com.swarg.profilemanagment.data.domain.UserProfile;
 
 
 public interface UserProfileService {
@@ -18,5 +16,11 @@ public interface UserProfileService {
 	List<UserProfile> findAll();
 
 	UserProfile findUserProfileById(Long id);
+
+	UserProfile save(UserProfile userprofile);
+
+	UserProfile update(UserProfile userprofile);
+
+	void delete(Long id);
 
 }
