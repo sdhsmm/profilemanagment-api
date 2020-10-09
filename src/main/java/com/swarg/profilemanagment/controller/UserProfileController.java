@@ -21,6 +21,7 @@ import com.swarg.profilemanagment.dto.PersistableUserProfile;
 import com.swarg.profilemanagment.dto.ReadableUserProfile;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @Api(tags = "Manage profile", description = "perform all required crud oprration over user profile")
@@ -56,6 +57,7 @@ public class UserProfileController {
 	/*--------------------------Retrieve--------------------------------*/
 
 	@RequestMapping(path = "/userprofiles", method = RequestMethod.GET)
+	@ApiOperation(value = "")
 	List<ReadableUserProfile> getAllUsersProfile() {
 		List<UserProfile> usrs = userProfileService.findAll();
 		return usrs.stream().map(new UserProfileToReadableUserProfile()::convert).collect(Collectors.toList());
