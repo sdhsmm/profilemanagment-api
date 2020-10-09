@@ -29,7 +29,7 @@ public class UserProfileJPAService implements UserProfileService {
 	public UserProfile findUserProfileByPhoneNo(String phoneNo) {
 		UserProfile user = userProfileRepository.findByPhoneNo(phoneNo).orElse(null);
 		return user;
-	
+
 	}
 
 	@Override
@@ -64,7 +64,6 @@ public class UserProfileJPAService implements UserProfileService {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
 		userProfileRepository.deleteById(id);
 	}
 

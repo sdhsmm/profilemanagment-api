@@ -20,7 +20,10 @@ import com.swarg.profilemanagment.data.service.UserProfileService;
 import com.swarg.profilemanagment.dto.PersistableUserProfile;
 import com.swarg.profilemanagment.dto.ReadableUserProfile;
 
+import io.swagger.annotations.Api;
+
 @RestController
+@Api(tags = "Manage profile", description = "perform all required crud oprration over user profile")
 public class UserProfileController {
 
 	@Autowired
